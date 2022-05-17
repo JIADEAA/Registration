@@ -1,0 +1,41 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="signup:war exploded">
+    <output-path>$PROJECT_DIR$/target/signup-2.0</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>signup</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="signup" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: commons-dbutils:commons-dbutils:1.6" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.20" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.23" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-catalina:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jsp-api:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-el-api:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-api:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jni:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-coyote:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util-scan:9.0.40" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jaspic-api:9.0.40" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/signup-2.0/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="signup/web/Web" />
+    </root>
+  </artifact>
+</component>

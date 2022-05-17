@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南昌大学计协报名表</title>
+    <base href="http://localhost:8080/signup/">
+    <link rel="stylesheet" href="static/css/报名页.css">
+</head>
+<body>
+<div class="bbear"><span class="bear"></span></div>
+
+<div class="lay">
+    <div class="all">
+        <form action="hello" method="post" id="form_id">
+            <table width="460px" cellspacing="15px">
+
+                <div class="title">报名</div>
+                <!-- 1 -->
+                <tr>
+                    <td>学号：</td>
+                    <td><input type="text" class="ipt1" name="id">
+                        <p class="message1">学号必须为10位</p></td>
+                </tr>
+                <!-- 2 -->
+                <tr>
+                    <td>姓名：</td>
+                    <td><input type="text" class="ipt2" name="name">
+                        <p class="message2">姓名必须为中文</p></td>
+                </tr>
+                <!-- 3 -->
+                <tr>
+                    <td> 性别：</td>
+                    <td>
+                        <select name="sex">
+                            <option selected="selected">请选择</option>
+                            <option value="boy">男</option>
+                            <option value="girl">女</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- 4 -->
+                <tr>
+                    <td>电话：</td>
+                    <td><input type="text" class="ipt3" name="phone">
+                        <p class="message3">电话为11位</p></td>
+                </tr>
+                <!-- 5 -->
+                <tr>
+                    <td> 意向部门：</td>
+                    <td>
+                        <select name="dept">
+                            <option selected="selected">请选择</option>
+                            <option value="tech">研发</option>
+                            <option value="acm">ACM</option>
+                            <option value="ctf">CTF</option>
+                            <option value="admin">行政</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- 6 -->
+                <tr>
+                    <td>自我介绍：</td>
+                    <td><textarea name="introduce" id="introduce" cols="30" rows="10" class="area"></textarea>
+                        <p class="message3">建议10-50字左右</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" class="submit">
+                </tr>
+                </td>
+            </table>
+        </form>
+    </div>
+    <div class="pictrue"></div>
+</div>
+
+<script>
+    //获取元素 表单与p
+    var ipt1 = document.querySelector('.ipt1');
+    var message1 = document.querySelector('.message1');
+    // 注册事件 失去焦点   当失去点击表单，进行函数
+    ipt1.onblur = function () {
+        if (this.value.length == 10) {
+            message1.className = 'rigth'; //rigth前加messag继承其他属性
+            message1.innerHTML = '正确';          //如果这里没有这个的话，继承了p，这是肯定的，但如果输错了，继承下面那个inner
+            return 1;
+        } else {
+            message1.className = 'worry';
+            message1.innerHTML = '请输入正确学号';
+            return 0;
+        }
+    }
+
+    var ipt2 = document.querySelector('.ipt2');
+    var message2 = document.querySelector('.message2');
+    ipt2.onblur = function () {
+        if (this.value < '\u9fa5' && this.value > '\u4e00') {
+            message2.className = ' rigth';
+            message2.innerHTML = '正确';
+            return true;
+        } else {
+            message2.className = ' worry';
+            message2.innerHTML = '请输入正确姓名';
+            return false;
+        }
+    }
+
+    var ipt3 = document.querySelector('.ipt3');
+    var message3 = document.querySelector('.message3');
+    ipt3.onblur = function () {
+        if (this.value.length == 11) {
+            message3.className = 'rigth';
+            message3.innerHTML = '正确';
+            return 1;
+        } else {
+            message3.className = 'worry';
+            message3.innerHTML = '请输入正确电话';
+            return 0;
+        }
+    }
+
+
+    var submit = document.querySelector('.submit');
+    var formobj = document.querySelector('#form_id');
+    formobj.onsubmit = function abc() {
+        if (ipt1.value.length != 10) {
+            alert('请输入正确的报名信息');
+            return false;
+        } else if (ipt2.value > '\u9fa5' || ipt2.value < '\u4e00') {
+            alert('请输入正确的报名信息');
+            return false;
+        } else if (ipt3.value.length != 11) {
+            alert('请输入正确的报名信息');
+            return false;
+        } else if (document.getElementById("introduce").value === '') {
+            alert("请输入自我介绍!");
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
